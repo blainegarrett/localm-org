@@ -1,10 +1,8 @@
-import '../digibodies/bootstrap';
-
 // --- Post bootstrap -----
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-import PageBase from '../src/components/layout/PageBase';
+import PageBase from '../components/layout/PageBase';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 
