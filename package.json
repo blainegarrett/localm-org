@@ -1,58 +1,37 @@
 {
-  "name": "localm",
-  "version": "0.0.1",
-  "description": "Localm coming soon website",
-  "main": "server.js",
+  "name": "tanstack-start-example-material-ui",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
   "scripts": {
-    "dev": "next -p ${PORT:-3000}",
-    "build": "next build",
-    "start": "next start -p $PORT",
-    "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite dev",
+    "build": "vite build && tsc --noEmit",
+    "start": "node .output/server/index.mjs -p $PORT",
+    "gcp-build": "",
     "deploy": "gcloud --verbosity=debug --project localm-org app deploy app.yaml --no-promote --quiet --version"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/blainegarrett/localm-org.git"
-  },
-  "keywords": [
-    "node",
-    "nodejs",
-    "next",
-    "nextjs",
-    "google",
-    "app",
-    "engine",
-    "gae",
-    "cloud",
-    "isomorphic",
-    "ssr",
-    "universal",
-    "material-ui",
-    "material design",
-    "material",
-    "app"
-  ],
-  "author": "Blaine Garrett <blaine@blainegarrett.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/blainegarrett/localm-org/issues"
-  },
-  "homepage": "https://github.com/blainegarrett/localm-org#readme",
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/styles": "^4.11.3",
-    "jss": "^9.8.7",
-    "next": "^10.0.6",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-jss": "^8.6.1"
+    "@emotion/cache": "11.14.0",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.0",
+    "@fontsource-variable/roboto": "5.2.5",
+    "@mui/material": "6.4.7",
+    "@tanstack/nitro-v2-vite-plugin": "^1.132.40",
+    "@tanstack/react-router": "^1.132.47",
+    "@tanstack/react-router-devtools": "^1.132.50",
+    "@tanstack/react-start": "^1.132.48",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-h5-audio-player": "^3.10.1",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.2",
-    "eslint": "^4.18.2",
-    "eslint-plugin-react": "^7.7.0",
-    "eslint-plugin-react-hooks": "^1.4.0"
+    "@types/node": "^22.5.4",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^7.1.7",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

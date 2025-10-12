@@ -1,18 +1,16 @@
-runtime: nodejs10
-
-# what follows will be optional in the future:
+runtime: nodejs22
 service: default
+
 handlers:
   - url: /.*
     script: auto
     secure: optional
-
-instance_class: F1 # Frontend - 30s timeout 28hours free quota
-automatic_scaling: 
-  max_instances: 1
-  min_instances: 0
-  max_idle_instances: 1 # default automatic
-  #target_cpu_utilization: .85 # default .6
-
-inbound_services:
-- warmup
+# handlers:
+#   # Serve all static files with url ending with a file extension
+#   - url: /(.*\..+)$
+#     static_files: dist/\1
+#     upload: dist/(.*\..+)$
+#   # Catch all handler to index.html
+#   - url: /.*
+#     static_files: dist/index.html
+#     upload: dist/index.html
