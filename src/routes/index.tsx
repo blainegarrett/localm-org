@@ -16,7 +16,6 @@ function Home() {
           left: 0,
           width: "100vw",
           height: "100vh",
-          //zIndex: 1
         },
         "& .videoBackground": {
           display: "block",
@@ -31,7 +30,10 @@ function Home() {
           bottom: 0,
           color: "#666666",
           width: "100vw",
-          minHeight: "100px",
+          minHeight: "300px",
+          [theme.breakpoints.down("sm")]: {
+            minHeight: "300px",
+          },
         },
         "& .teaserText": {
           position: "relative",
@@ -41,23 +43,18 @@ function Home() {
           paddingLeft: "48px",
 
           [theme.breakpoints.down("sm")]: {
-            bottom: "-20px",
-            fontSize: "50px",
-          },
-
-          [theme.breakpoints.down("xs")]: {
-            bottom: "-10px",
-            fontSize: "25px",
-            paddingLeft: "8px",
+            fontSize: "30px",
+            bottom: "-13px",
+            paddingLeft: 2,
           },
         },
         "& .messageContainer": {
-          padding: "48px",
+          padding: "24px",
           backgroundColor: "#ffffff",
 
-          [theme.breakpoints.down("xs")]: {
-            padding: "16px",
-            fontSize: "12px",
+          [theme.breakpoints.down("sm")]: {
+            padding: "36px",
+            fontSize: "0.875rem",
           },
         },
 

@@ -12,6 +12,7 @@ import createCache from "@emotion/cache";
 import fontsourceVariableRobotoCss from "@fontsource-variable/roboto?url";
 import React from "react";
 import { theme } from "~/setup/theme";
+import PlayerUI from "~/components/player/Player";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -61,9 +62,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <Container component="main" sx={{ paddingBlock: 4 }}>
             {children}
           </Container>
+          <PlayerUI />
         </Providers>
 
-        <TanStackRouterDevtools position="bottom-right" />
+        {/* <TanStackRouterDevtools position="bottom-right" /> */}
         <Scripts />
       </body>
     </html>

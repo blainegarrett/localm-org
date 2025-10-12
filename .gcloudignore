@@ -25,9 +25,13 @@
 .git
 .gitignore
 !.output/
+.nitro
+vite.config.ts
+tsconfig.json
 
 # Node.js dependencies:
+node_modules/
 
 # Source code
 /src/
-node_modules/
+
