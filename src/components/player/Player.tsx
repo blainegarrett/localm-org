@@ -1,6 +1,6 @@
 import React from "react";
 import AudioPlayer from "react-h5-audio-player";
-import { ClientOnly } from "@tanstack/react-router";
+import { ClientOnly, Link } from "@tanstack/react-router";
 
 import "react-h5-audio-player/lib/styles.css";
 import { TrackList, TrackArtistSummary } from "./types";
@@ -8,7 +8,7 @@ import Box from "@mui/material/Box";
 
 const div: TrackArtistSummary = {
   name: "Dissonance in the Void",
-  slug: "div",
+  slug: "dissonance-in-the-void",
 };
 const playlist: TrackList = [
   // {
@@ -131,7 +131,8 @@ export default function PlayerUI() {
             fontSize: "0.75rem",
             fontWeight: 400,
             "& a": {
-              color: "#3b3b3",
+              color: "#afafaf",
+              textDecoration: "none",
             },
           },
           "& .albumName": {
@@ -197,7 +198,13 @@ export default function PlayerUI() {
             <div className="bandName">
               {artists
                 .map<React.ReactNode>((artist, i) => {
-                  return artist.name;
+                  return (
+                    <Link
+                      to="/bands/$bandSlug"
+                      params={{ bandSlug: artist.slug }}>
+                      {artist.name}
+                    </Link>
+                  );
                 })
                 .reduce((prev, curr) => [prev, <>, </>, curr])}
             </div>
