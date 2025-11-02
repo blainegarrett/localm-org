@@ -7,7 +7,9 @@ import {
   createRootRoute,
 } from "@tanstack/react-router";
 import { CacheProvider } from "@emotion/react";
-import { CssBaseline, GlobalStyles, ThemeProvider } from "@mui/material";
+import GlobalStyles from "@mui/material/GlobalStyles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material/styles";
 import createCache from "@emotion/cache";
 import fontsourceVariableRobotoCss from "@fontsource-variable/roboto?url";
 import React from "react";
