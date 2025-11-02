@@ -7,11 +7,11 @@ import {
   createRootRoute,
 } from "@tanstack/react-router";
 import { CacheProvider } from "@emotion/react";
-import { Container, CssBaseline, ThemeProvider } from "@mui/material";
+import { CssBaseline, GlobalStyles, ThemeProvider } from "@mui/material";
 import createCache from "@emotion/cache";
 import fontsourceVariableRobotoCss from "@fontsource-variable/roboto?url";
 import React from "react";
-import { theme } from "~/setup/theme";
+import { globalStyles, theme } from "~/setup/theme";
 import PlayerUI from "~/components/player/Player";
 
 export const Route = createRootRoute({
@@ -36,6 +36,7 @@ function Providers({ children }: { children: React.ReactNode }) {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <GlobalStyles styles={globalStyles} />
         {children}
       </ThemeProvider>
     </CacheProvider>
@@ -55,13 +56,16 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://storage.googleapis.com/mplsart-cdn-central/assets/fonts/Bryant/WOFF/Bryant.css"
+          rel="stylesheet"
+          type="text/css"
+        />
         <HeadContent />
       </head>
       <body>
         <Providers>
-          <Container component="main" sx={{ paddingBlock: 4 }}>
-            {children}
-          </Container>
+          {children}
           <PlayerUI />
         </Providers>
 
