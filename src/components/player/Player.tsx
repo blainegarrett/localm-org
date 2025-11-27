@@ -10,7 +10,47 @@ const div: TrackArtistSummary = {
   name: "Dissonance in the Void",
   slug: "dissonance-in-the-void",
 };
+
+const dynamicDan: TrackArtistSummary = {
+  name: "Dynamic Dan and the Master Plan",
+  slug: "dynamic-dan-and-the-master-plan",
+};
+
+const circe: TrackArtistSummary = {
+  name: "Circe",
+  slug: "circe",
+};
+
+const caseyDagans: TrackArtistSummary = { name: "Casey Dagans", slug: "casey-dagans" }
+
+
 const playlist: TrackList = [
+  {
+    src: 'https://storage.googleapis.com/localm-org-cdn/music/lmo-cd/1%20-%20Dynamic%20Dan%20and%20the%20Master%20Plan%20-%20Take%20the%20Time.mp3',
+    title: "1. Take the Time",
+    artists: [dynamicDan],
+    albumName: "LMO Compilation CD",
+  },
+  {
+    src: 'https://storage.googleapis.com/localm-org-cdn/music/lmo-cd/2%20-%20Casey%20Dagans%20-%20New%20II.mp3',
+    title: "2. New II",
+    artists: 
+      [caseyDagans],
+    albumName: "LMO Compilation CD",
+  },
+  {
+    src: 'https://storage.googleapis.com/localm-org-cdn/music/lmo-cd/3%20-%20Circe%20-%20Brown%2C%20Black%2C%20Brown%2C%20Blue%20%26%20Grey.mp3',
+    title: "3. Brown, Black, Brown, Blue & Grey",
+    artists: 
+      [circe],
+    albumName: "LMO Compilation CD",
+  },
+
+
+
+
+
+
   // {
   //   src: 'https://storage.googleapis.com/archives.blainegarrett.com/div/music/Dissonance%20In%20the%20Void-AV%20Massacre.mp3',
   //   title: 'AV Massacre',
@@ -208,6 +248,7 @@ export default function PlayerUI() {
                 })
                 .reduce((prev, curr) => [prev, <>, </>, curr])}
             </div>
+            <div className="bandName">{playlist[activeTrack].albumName}</div>
           </div>
           <div className="playerUI">
             <AudioPlayer

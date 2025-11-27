@@ -84,7 +84,7 @@ function Home() {
               Local Music Online
             </Typography>
             <div className="messageContainer">
-              Returning soon ... in some capacity ... maybe. ~B
+              Returning soon ... in some capacity ... maybe ~B
             </div>
           </div>
         </div>
